@@ -1,3 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :url
+  attr_accessible :url, :title
+
+  has_many :comments
 end
