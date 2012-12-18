@@ -1,0 +1,15 @@
+<h2> Show a post: </h2>
+
+<p>
+	<%= link_to @post.title, @post.url %>
+</p>
+
+<p> <%= pluralize(@post.comments.count, "comment") %></p>
+
+ <ul>
+ 	<% @post.comments.each do |comment| %>
+ 	<li>
+ 		<%= comment.content %>
+ 	</li>
+ 	<% end %>
+ </ul>
