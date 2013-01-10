@@ -16,4 +16,6 @@ class PostsController < ApplicationController
 		Post.create(params[:post])
 		redirect_to root_path
 	end
+
+	
 end

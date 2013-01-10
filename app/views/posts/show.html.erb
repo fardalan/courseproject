@@ -17,6 +17,13 @@
  <p>
  	<h4> Create a New Comment: </h4>
  	<%= form_for [@post, @comment] do |f| %>
+
+	<% if !@comment.valid? %>
+		<div class='alert alert-error'>
+			<%= @comment.errors.full_messages.join("<br/>").html_safe %>
+		</div>
+	<% end %>
+
  		<%= f.label :content %>
  		<%= f.text_area :content, rows: 5 %>
  		<br/>

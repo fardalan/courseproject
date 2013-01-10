@@ -4,7 +4,9 @@
 
 <ul>	 
 	<% @posts.each do |post| %>
+		
 		<li>
+			
 			<%= link_to post_votes_path(post, direction: "up"), :method => :post do %>
 				<i class="icon-arrow-up"></i>
 			<% end %>

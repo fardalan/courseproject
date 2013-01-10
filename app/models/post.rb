@@ -7,6 +7,11 @@ class Post < ActiveRecord::Base
 
 	before_create :generate_slug
 
+	validates :title, presence: true
+	validates :title, length: { minimum: 2 }
+
+	validates :url, presence: :true
+
 	def vote_number
 		votes.where(direction: "up").count - votes.where(direction: "down").count
 	end
