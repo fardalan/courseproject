@@ -1,0 +1,11 @@
+<%= form_for(@post) do |f| %>
+	<%= render 'shared/error_messages', comment: @post %>
+
+ 	<%= f.label :url, "URL" %>
+ 	<%= f.text_field :url %>
+
+ 	<%= f.label :title %>
+ 	<%= f.text_field :title %>
+
+ 	<%= f.submit "Save", class: "btn btn-large btn-primary" %>
+ <% end %>
