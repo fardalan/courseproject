@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+	before_filter :ensure_user, only: [:new, :create]
+
 	def index
 	@posts = Post.all
 	end
@@ -26,4 +29,9 @@ class PostsController < ApplicationController
     	end 
 	end
 	
+	def ensure_user
+		if !params[:user]
+			redirect_to posts_path, notice: "Sorry buddy must be a user to access this page!"
+		end
+	end
 end
